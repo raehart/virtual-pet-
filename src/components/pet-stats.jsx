@@ -1,4 +1,4 @@
-// import './pet-stats.css';
+import './pet-stats.css';
 
 function PetStats(props) {
   const stats = {
@@ -8,14 +8,13 @@ function PetStats(props) {
     hygiene: 10
   }
 
-  // loop over meters & render dynamically rather than manually 
   return (
     <div className="pet-stats">
 
       {Object.keys(stats).map((stat) => {
         return (
-          <div className="pet-stats-meter">
-            <label htmlFor={stat}>Pet {stat}</label>
+          <div key={`stat-${stat}`}   className="pet-stats-meter">
+            <label htmlFor={stat}>Pet <span className="pet-stats-name">{stat}</span></label>
             <meter 
               id={stat}
               min="0"
@@ -27,9 +26,7 @@ function PetStats(props) {
             ></meter>
           </div>
         )
-
       })}
-    
     </div> 
   );
 }

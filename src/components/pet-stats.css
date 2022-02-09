@@ -1,0 +1,7 @@
+.pet-stats-name {
+  display: inline-block;
+} 
+
+.pet-stats-name::first-letter{
+  text-transform: capitalize;
+}
