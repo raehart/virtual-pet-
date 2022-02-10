@@ -1,23 +1,24 @@
 import './pet-card.css';
 import PetStats from './pet-stats';
+import moment from 'moment';
 
+//birth miliseconds generarted when project started- with Date.now - - feature plan is to add on adpotion - when pet select button is clicked
 function PetCard(props) {
   const pet = {
     name: 'Meeps',
     birth: 1644382990446,
     photo: "http://placekitten.com/g/400/400",
-    alttext: "A tabby kitten, sitting in front of a planter, with its head tilted to one side. In black and white"
+    alttext: "a placeholder kitten"
   }
-  
 
-  //Look into moment JS to format pet age - currently in miliseconds gi
+  const petAge = moment(pet.birth, "unix").fromNow();
+
 
   return (
     <div className="pet-card">
         <h2>{pet.name}</h2>
-        <div> Age: {Date.now()-pet.birth} milliseconds old</div>
+        <div> Hatched {petAge} </div>
         <img src={pet.photo} alt={pet.alttext} />
-  
       <PetStats/>
     </div>
   );

@@ -5,7 +5,7 @@ function PetStats(props) {
     hunger: 55,
     boredom: 85,
     fatigue: 20,
-    hygiene: 10
+    messiness: 10
   }
 
   return (
